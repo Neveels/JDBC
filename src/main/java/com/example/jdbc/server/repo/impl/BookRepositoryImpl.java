@@ -13,7 +13,7 @@ public class BookRepositoryImpl implements BookRepository {
     Connection connection = DataBaseConnection.getConnection();
 
     @Override
-    public List<AddressBook> gelAllById() {
+    public List<AddressBook> gelAll() {
         List<AddressBook> addressBooks;
 
         try {
@@ -84,6 +84,26 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public void update(AddressBook addressBook) {
-
+        String sql = "UPDATE AddressBook SET" +
+                " age = ?," +
+                " country = ?," +
+                " name = ?," +
+                " surname = ?," +
+                " email = ?," +
+                " phoneNumber = ?" +
+                " WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,addressBook.getAge());
+            preparedStatement.setString(2, addressBook.getCountry());
+            preparedStatement.setString(3, addressBook.getFirstName());
+            preparedStatement.setString(4, addressBook.getSecondName());
+            preparedStatement.setString(5, addressBook.getEmail());
+            preparedStatement.setString(6, addressBook.getPhoneNumber());
+            preparedStatement.setInt(7, addressBook.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
