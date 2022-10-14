@@ -1,6 +1,7 @@
 package com.example.jdbc.entity;
+import java.io.Serializable;
 
-public class AddressBook {
+public class AddressBook implements Serializable{
     private Integer id;
 
     private Integer age;

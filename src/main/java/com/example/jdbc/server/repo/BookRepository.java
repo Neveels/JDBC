@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BookRepository {
 
-    List<AddressBook> gelAllById();
+    List<AddressBook> gelAll();
 
     void deleteById(Integer id);
 
