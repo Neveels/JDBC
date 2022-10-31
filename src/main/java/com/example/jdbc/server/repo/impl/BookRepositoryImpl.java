@@ -61,19 +61,18 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public void save(AddressBook addressBook) {
 
-        String sqlRequest = "INSERT INTO AddressBook (id, age, country, name, surname, email, phoneNumber) " +
-                "VALUES(?, ?, ?, ?, ?, ?, ?)";
+        String sqlRequest = "INSERT INTO AddressBook (age, country, name, surname, email, phoneNumber) " +
+                "VALUES(?, ?, ?, ?, ?, ?)";
 
 
         try {
             PreparedStatement statement = connection.prepareStatement(sqlRequest);
-            statement.setInt(1, addressBook.getId());
-            statement.setInt(2, addressBook.getAge());
-            statement.setString(3, addressBook.getCountry());
-            statement.setString(4, addressBook.getFirstName());
-            statement.setString(5, addressBook.getSecondName());
-            statement.setString(6, addressBook.getEmail());
-            statement.setString(7, addressBook.getPhoneNumber());
+            statement.setInt(1, addressBook.getAge());
+            statement.setString(2, addressBook.getCountry());
+            statement.setString(3, addressBook.getFirstName());
+            statement.setString(4, addressBook.getSecondName());
+            statement.setString(5, addressBook.getEmail());
+            statement.setString(6, addressBook.getPhoneNumber());
 
             statement.executeUpdate();
         } catch (SQLException e) {

@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="958cd6c7-ac26-4ae6-a4b9-f1e68bcf2b9e" name="Changes" comment="before fix id problem">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/ConnectionTCP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/client/ClientTCP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/entity/AddressBookProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/ServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/command/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/entity/AddressBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/entity/AddressBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/ServerTCP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/ServerTCP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/repo/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/repo/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/db/DataBaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/db/DataBaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/repo/impl/BookRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/server/repo/impl/BookRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/jdbc/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/jdbc/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,23 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.jdbc.server" />
@@ -116,6 +109,7 @@
       <workItem from="1665684023572" duration="949000" />
       <workItem from="1665692613743" duration="5153000" />
       <workItem from="1665742913215" duration="8511000" />
+      <workItem from="1666619356795" duration="1420000" />
     </task>
     <servers />
   </component>
@@ -136,17 +130,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="before fix id problem" />
     <option name="LAST_COMMIT_MESSAGE" value="before fix id problem" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/jdbc/server/RequestHandler.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/JDBC$ServerTCP.ic" NAME="ServerTCP Coverage Results" MODIFIED="1665338587936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
