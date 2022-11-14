@@ -6,8 +6,8 @@ import java.net.Socket;
 import java.util.List;
 
 import com.example.jdbc.command.Command;
-import com.example.jdbc.entity.AddressBook;
-import com.example.jdbc.entity.AddressBookProperty;
+import com.example.jdbc.entity.Student;
+import com.example.jdbc.entity.StudentProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Controller {
-    private final ObservableList<AddressBookProperty> tableAddressBookProperties = FXCollections.observableArrayList();
+    private final ObservableList<StudentProperty> tableAddressBookProperties = FXCollections.observableArrayList();
 
     private ConnectionTCP connectionTCP;
 
@@ -41,7 +41,7 @@ public class Controller {
     private TableColumn<?, ?> column_age;
 
     @FXML
-    private TableColumn<?, ?> column_country;
+    private TableColumn<?, ?> column_university;
 
     @FXML
     private TableColumn<?, ?> column_email;
@@ -50,7 +50,7 @@ public class Controller {
     private TableColumn<?, ?> column_id;
 
     @FXML
-    private TableColumn<AddressBook, Integer> column_name;
+    private TableColumn<Student, Integer> column_name;
 
     @FXML
     private TableColumn<?, ?> column_phonenumber;
@@ -62,7 +62,7 @@ public class Controller {
     private TextField field_age;
 
     @FXML
-    private TextField field_country;
+    private TextField field_university;
 
     @FXML
     private TextField field_email;
@@ -77,7 +77,7 @@ public class Controller {
     private TextField field_surname;
 
     @FXML
-    private TableView<AddressBookProperty> table;
+    private TableView<StudentProperty> table;
 
     @FXML
     void initialize() {
@@ -93,29 +93,29 @@ public class Controller {
         column_surname.setCellValueFactory(new PropertyValueFactory<>("secondName"));
         column_phonenumber.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         column_age.setCellValueFactory(new PropertyValueFactory<>("age"));
-        column_country.setCellValueFactory(new PropertyValueFactory<>("country"));
+        column_university.setCellValueFactory(new PropertyValueFactory<>("university"));
         column_email.setCellValueFactory(new PropertyValueFactory<>("email"));
 
         button_add.setOnAction(actionEvent -> {
-            AddressBook addressBook = new AddressBook();
-            addressBook.setId(10);
-            addressBook.setFirstName(field_name.getText().trim());
-            addressBook.setSecondName(field_surname.getText().trim());
-            addressBook.setPhoneNumber(field_phoneNumber.getText().trim());
-            addressBook.setAge(Integer.valueOf(field_age.getText().trim()));
-            addressBook.setCountry(field_country.getText().trim());
-            addressBook.setEmail(field_email.getText().trim());
+            Student student = new Student();
+            student.setId(10);
+            student.setFirstName(field_name.getText().trim());
+            student.setSecondName(field_surname.getText().trim());
+            student.setPhoneNumber(field_phoneNumber.getText().trim());
+            student.setAge(Integer.valueOf(field_age.getText().trim()));
+            student.setUniversity(field_university.getText().trim());
+            student.setEmail(field_email.getText().trim());
 
             connectionTCP.writeObject(Command.CREATE);
-            connectionTCP.writeObject(addressBook);
+            connectionTCP.writeObject(student);
         });
 
         button_read.setOnAction(actionEvent -> {
             tableAddressBookProperties.clear();// чтобы не добавлять каждый раз к существующему списку
             connectionTCP.writeObject(Command.READ);
-            List<AddressBook> countries = (List<AddressBook>) connectionTCP.readObject();
+            List<Student> countries = (List<Student>) connectionTCP.readObject();
             for (int i = 0; i < countries.size(); i++) {
-                AddressBookProperty e = new AddressBookProperty(countries.get(i));
+                StudentProperty e = new StudentProperty(countries.get(i));
                 tableAddressBookProperties.add(e);
             }
             table.setItems(tableAddressBookProperties);
@@ -125,7 +125,7 @@ public class Controller {
             if (table.getSelectionModel().getSelectedItem() != null) {
                 field_name.setText(table.getSelectionModel().getSelectedItem().getFirstName());
                 field_surname.setText(table.getSelectionModel().getSelectedItem().getSecondName());
-                field_country.setText(table.getSelectionModel().getSelectedItem().getCountry());
+                field_university.setText(table.getSelectionModel().getSelectedItem().getUniversity());
                 field_age.setText(String.valueOf(table.getSelectionModel().getSelectedItem().getAge()));
                 field_phoneNumber.setText(table.getSelectionModel().getSelectedItem().getPhoneNumber());
                 field_email.setText(table.getSelectionModel().getSelectedItem().getEmail());
@@ -133,13 +133,13 @@ public class Controller {
                 field_name.setText("Choose any item");
             }
             button_update.setOnAction(e -> {
-                AddressBook addressBook = new AddressBook();
+                Student addressBook = new Student();
                 addressBook.setId(table.getSelectionModel().getSelectedItem().getId());
                 addressBook.setEmail(field_email.getText().trim());
                 addressBook.setFirstName(field_name.getText().trim());
                 addressBook.setSecondName(field_surname.getText().trim());
                 addressBook.setAge(Integer.valueOf(field_age.getText().trim()));
-                addressBook.setCountry(field_country.getText().trim());
+                addressBook.setUniversity(field_university.getText().trim());
                 addressBook.setPhoneNumber(field_phoneNumber.getText().trim());
 
                 connectionTCP.writeObject(Command.UPDATE);

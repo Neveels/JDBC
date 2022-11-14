@@ -2,36 +2,25 @@ package com.example.jdbc.entity;
 
 import javafx.beans.property.*;
 
-public class AddressBookProperty {
+public class StudentProperty {
     private final SimpleIntegerProperty id;
     private final SimpleIntegerProperty age;
 
-    private final SimpleStringProperty country;
+    private final SimpleStringProperty university;
     private final SimpleStringProperty firstName;
     private final SimpleStringProperty secondName;
     private final SimpleStringProperty phoneNumber;
     private final SimpleStringProperty email;
 
-    public AddressBookProperty(AddressBook addressBook) {
-        id = new SimpleIntegerProperty(addressBook.getId());
-        firstName = new SimpleStringProperty(addressBook.getFirstName());
-        secondName = new SimpleStringProperty(addressBook.getSecondName());
-        country = new SimpleStringProperty(addressBook.getCountry());
-        phoneNumber = new SimpleStringProperty(addressBook.getPhoneNumber());
-        email = new SimpleStringProperty(addressBook.getEmail());
-        age = new SimpleIntegerProperty(addressBook.getAge());
+    public StudentProperty(Student student) {
+        id = new SimpleIntegerProperty(student.getId());
+        firstName = new SimpleStringProperty(student.getFirstName());
+        secondName = new SimpleStringProperty(student.getSecondName());
+        university = new SimpleStringProperty(student.getUniversity());
+        phoneNumber = new SimpleStringProperty(student.getPhoneNumber());
+        email = new SimpleStringProperty(student.getEmail());
+        age = new SimpleIntegerProperty(student.getAge());
     }
-//
-//    public AddressBook toAddressBook() {
-//        return new AddressBook(id.intValue(),
-//                age.intValue(),
-//                country.getValue(),
-//                firstName.getValue(),
-//                secondName.getValue(),
-//                phoneNumber.getValue(),
-//                email.getValue());
-//
-//    }
 
     public int getId() {
         return id.get();
@@ -49,12 +38,12 @@ public class AddressBookProperty {
         this.age.set(age);
     }
 
-    public String getCountry() {
-        return country.get();
+    public String getUniversity() {
+        return university.get();
     }
 
-    public void setCountry(String country) {
-        this.country.set(country);
+    public void setUniversity(String university) {
+        this.university.set(university);
     }
 
     public String getFirstName() {

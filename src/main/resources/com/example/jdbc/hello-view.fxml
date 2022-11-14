@@ -14,7 +14,7 @@
                 <TableColumn fx:id="column_surname" prefWidth="100.0" text="surname" />
                 <TableColumn fx:id="column_phonenumber" prefWidth="120.0" text="phonenumber" />
                 <TableColumn fx:id="column_age" prefWidth="120.0" text="age" />
-                <TableColumn fx:id="column_country" prefWidth="100.0" text="country" />
+                <TableColumn fx:id="column_university" prefWidth="100.0" text="university" />
                 <TableColumn fx:id="column_email" prefWidth="120.0" text="email" />
                 <TableColumn fx:id="column_id" prefWidth="20.0" text="id" />
             </columns>
@@ -27,7 +27,7 @@
         <TextField fx:id="field_phoneNumber" layoutX="235.0" layoutY="320.0" prefWidth="120.0" promptText="phonenumber" />
         <TextField fx:id="field_email" layoutX="575.0" layoutY="320.0" prefWidth="120.0" promptText="email" />
         <TextField fx:id="field_age" layoutX="355.0" layoutY="320.0" prefWidth="120.0" promptText="age" />
-        <TextField fx:id="field_country" layoutX="475.0" layoutY="320.0" prefWidth="100.0" promptText="country" />
+        <TextField fx:id="field_university" layoutX="475.0" layoutY="320.0" prefWidth="100.0" promptText="university" />
         <Button fx:id="button_add" layoutX="15.0" layoutY="356.0" mnemonicParsing="false" prefWidth="200.0" text="Add" />
         <Button fx:id="button_exit" layoutX="495.0" layoutY="356.0" mnemonicParsing="false" prefWidth="200.0" text="Exit" />
     </children>
